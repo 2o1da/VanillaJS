@@ -1,12 +1,11 @@
-const first = document.getElementById("title");
-const second = document.querySelector("#title");
+//const first = document.getElementById("title");
+const title = document.querySelector("#title");
 
-first.innerHTML = "Hello! From JS";
-first.style.color = "yellow";
-document.title = 'Beautiful';
+title.innerHTML = "Hello! From JS";
+// title.style.color = "yellow";
+document.title = "Beautiful";
 
 console.dir(document);
-
 
 // event 객체
 function handleResize(event) {
@@ -15,13 +14,13 @@ function handleResize(event) {
 }
 
 // handleResize() : 호출 안해도 자동으로 호출 됨
-// handleResize : 바로 호출하지 않고 
+// handleResize : 바로 호출하지 않고
 window.addEventListener("resize", handleResize);
 
+const BASE_COLOR = "rgb(255, 255, 255)"; // white
+const OTHER_COLOR = "#000000"; // black
 
-const BASE_COLOR = "rgb(255, 255, 255)";
-const OTHER_COLOR = "#000000";
-
+/*
 function handleClick() {
     const currentColor = first.style.color;
     if (currentColor === BASE_COLOR) {
@@ -30,10 +29,30 @@ function handleClick() {
         first.style.color = BASE_COLOR;
     }
 }
+*/
+
+const CLICKED_CLASS = "clicked";
+
+function handleClick() {
+    /*
+    //const currentClassName = title.className;
+    const hasClass = title.classList.contains(CLICKED_CLASS);
+
+    if (!hasClass) {
+        //if (currentClassName !== CLICKED_CLASS) {
+        //title.className = CLICKED_CLASS;
+        title.classList.add(CLICKED_CLASS);
+    } else {
+        //title.className = "";
+        title.classList.remove(CLICKED_CLASS);
+    }
+    */
+    title.classList.toggle(CLICKED_CLASS); // 클래스가 없으면  add, 있으면 remove
+}
 
 function init() {
-    first.style.color = BASE_COLOR;
-    first.addEventListener("click", handleClick)
+    //title.style.color = BASE_COLOR;
+    title.addEventListener("click", handleClick);
 }
 
 init();

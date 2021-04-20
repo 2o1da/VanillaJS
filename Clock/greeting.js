@@ -2,7 +2,7 @@ const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     greeting = document.querySelector(".js-greetings");
 
-const USER_LS = "currentUser",
+const USER_LS = "currentUser_LS",
     SHOWING_CN = "showing";
 
 function saveName(text) {
